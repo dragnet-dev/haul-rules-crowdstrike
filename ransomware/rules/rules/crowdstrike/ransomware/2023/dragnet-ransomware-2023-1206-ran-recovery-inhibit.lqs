@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-1206 — Recovery Inhibition (medusa)
+// Status: deprecated | Level: high | ID: 8eb74bcc-c953-5718-b651-e247d5d61075
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

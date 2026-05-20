@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1465 — Recovery Inhibition (nightspire)
+// Status: deprecated | Level: high | ID: a2b62c2c-2bd5-529c-9778-a0b5c5699a05
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

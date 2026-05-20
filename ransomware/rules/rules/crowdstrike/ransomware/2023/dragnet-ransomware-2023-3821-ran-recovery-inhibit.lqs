@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3821 — Recovery Inhibition (clop)
+// Status: experimental | Level: high | ID: 6dbfc7c3-32dc-5a3f-8904-69d0593f612a
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

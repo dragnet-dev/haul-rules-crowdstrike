@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0338 — Recovery Inhibition (krybit)
+// Status: stable | Level: high | ID: 8636963e-75dc-5aba-9e83-b1e47e83f1c1
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2598 — Recovery Inhibition (tengu)
+// Status: test | Level: high | ID: f227d2c7-121c-57ba-ad12-98d581ad2eb7
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

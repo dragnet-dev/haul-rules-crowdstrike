@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-5318 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: b237ef4c-6160-5c83-9c10-e85a510ea34b
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://cactusbloguuodvqjmnzlwetjlpj6aggc6iocwhuupb47laukux7ckid.onion/posts/AGORAVITA*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

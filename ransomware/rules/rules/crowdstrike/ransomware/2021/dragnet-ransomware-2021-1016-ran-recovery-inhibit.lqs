@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-1016 — Recovery Inhibition (pysa)
+// Status: deprecated | Level: high | ID: 3e89d55f-72ca-5245-bc80-8c7942f40fe6
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

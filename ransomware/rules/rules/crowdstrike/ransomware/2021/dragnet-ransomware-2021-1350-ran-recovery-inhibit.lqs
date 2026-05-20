@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-1350 — Recovery Inhibition (conti)
+// Status: deprecated | Level: high | ID: a1e9d0ff-6f27-582b-b289-6df525358a53
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

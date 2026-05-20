@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2788 — Recovery Inhibition (secpo)
+// Status: stable | Level: high | ID: fddcb71e-0c7b-5708-8931-046a26d7ceb8
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

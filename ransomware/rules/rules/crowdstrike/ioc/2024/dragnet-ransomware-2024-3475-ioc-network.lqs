@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-3475 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: fb1f6dff-d126-5cd6-97ec-b3a11e01679f
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=climatech.com*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

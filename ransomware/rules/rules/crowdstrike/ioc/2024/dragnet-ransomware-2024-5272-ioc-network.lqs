@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5272 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 412df835-681a-5790-8034-7a7bc9bd947d
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/myhealthcarebilling/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

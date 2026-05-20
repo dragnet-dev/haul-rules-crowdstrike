@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0016 — Recovery Inhibition (maze)
+// Status: deprecated | Level: high | ID: 136d4158-a859-5885-affc-369bf9f62cff
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

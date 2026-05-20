@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-0107 — Mass File Rename (nitrogen)
+// Status: experimental | Level: high | ID: 1c45dcc1-bb05-5caf-9b3c-301778fdbcf0
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

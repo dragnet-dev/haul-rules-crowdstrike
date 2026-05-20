@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0084 — Recovery Inhibition (netwalker)
+// Status: deprecated | Level: high | ID: a69ddee6-ab0a-5399-8fe9-0ce1245734bf
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

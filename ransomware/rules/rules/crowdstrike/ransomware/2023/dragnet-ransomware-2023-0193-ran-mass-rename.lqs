@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-0193 — Mass File Rename (darkpower)
+// Status: experimental | Level: high | ID: 1b66fc90-3af1-58bf-b863-399fb40bc573
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

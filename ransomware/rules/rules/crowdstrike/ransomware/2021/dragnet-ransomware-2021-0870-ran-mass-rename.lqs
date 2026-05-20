@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0870 — Mass File Rename (pay2key)
+// Status: deprecated | Level: high | ID: de7526ed-a1ee-5a97-86ec-9b9abd595a54
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

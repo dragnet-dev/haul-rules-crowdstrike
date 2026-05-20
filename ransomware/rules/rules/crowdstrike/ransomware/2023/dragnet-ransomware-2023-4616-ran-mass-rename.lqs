@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-4616 — Mass File Rename (play)
+// Status: experimental | Level: high | ID: 0b207864-b4c0-5ed1-addb-7d8560cfac84
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

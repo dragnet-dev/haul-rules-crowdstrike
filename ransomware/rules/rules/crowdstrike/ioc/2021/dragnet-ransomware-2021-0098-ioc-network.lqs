@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2021-0098 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 9a4b4d3f-1190-5a71-bf7e-e2a7ac180edc
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://dispossessor.com/blogs/162*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3291 — Mass File Rename (nokoyawa)
+// Status: experimental | Level: high | ID: 7e0ffefe-e359-5111-a888-d50fb8c9ddbc
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

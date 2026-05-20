@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0224 — Recovery Inhibition (netflim)
+// Status: deprecated | Level: high | ID: 6e1010ef-2256-5ec1-afb2-a9095901cc84
+
+#event_simpleName=ProcessRollup2
+| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

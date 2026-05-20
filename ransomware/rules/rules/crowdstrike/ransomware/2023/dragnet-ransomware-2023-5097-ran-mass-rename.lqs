@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-5097 — Mass File Rename (mallox)
+// Status: experimental | Level: high | ID: c15d2839-cc65-59bd-91df-d3b5df88bfbb
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

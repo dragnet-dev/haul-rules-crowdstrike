@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2072 — Ransomware C2 Communication
+// Status: test | Level: high | ID: 783f67b5-b160-595d-98de-66e0e3ed1a90
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/themortgagefirm-com*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

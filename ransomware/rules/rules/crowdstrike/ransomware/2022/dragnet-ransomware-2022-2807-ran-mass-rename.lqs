@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2807 — Mass File Rename (ragnarlocker)
+// Status: experimental | Level: high | ID: 08557d86-7ff8-5e00-a043-ac1f8946d983
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

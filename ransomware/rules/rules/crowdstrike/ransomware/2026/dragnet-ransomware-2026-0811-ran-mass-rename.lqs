@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0811 — Mass File Rename (abyss)
+// Status: deprecated | Level: high | ID: ec613fed-ab0b-5d85-a6dd-4a77c29d1564
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

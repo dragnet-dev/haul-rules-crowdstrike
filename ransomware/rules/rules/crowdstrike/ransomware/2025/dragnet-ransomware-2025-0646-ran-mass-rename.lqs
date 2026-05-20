@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0646 — Mass File Rename (morpheus)
+// Status: deprecated | Level: high | ID: 0f680985-f1c9-536d-9843-65aff1d126ae
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

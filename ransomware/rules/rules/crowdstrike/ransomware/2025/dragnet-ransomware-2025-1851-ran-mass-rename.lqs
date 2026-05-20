@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1851 — Mass File Rename (brotherhood)
+// Status: experimental | Level: high | ID: d0ff4729-f08e-510a-be13-07c2786d2ea9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

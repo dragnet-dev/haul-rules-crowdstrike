@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2013-0003 — End-of-Life Base Image
+// Status: deprecated | Level: high | ID: 8dccdd93-0590-5e67-a05b-4c68f251223b
+
+#event_simpleName=*
+| (ImageFileName = postgres:8.3.* OR ImageFileName = postgres:8.3-*)
+| table([timestamp, ComputerName])
+| limit(1000)

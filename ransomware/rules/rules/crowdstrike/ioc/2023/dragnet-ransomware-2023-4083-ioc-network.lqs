@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-4083 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 860aba86-614f-53ef-bf72-e3a7ab1825db
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://cactusbloguuodvqjmnzlwetjlpj6aggc6iocwhuupb47laukux7ckid.onion/posts/WASSERSTROM*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

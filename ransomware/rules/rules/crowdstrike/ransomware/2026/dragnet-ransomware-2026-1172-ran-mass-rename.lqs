@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-1172 — Mass File Rename (thegentlemen)
+// Status: stable | Level: high | ID: 7ad50e1c-d4e9-544e-ab3c-8fa6ded9ce93
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

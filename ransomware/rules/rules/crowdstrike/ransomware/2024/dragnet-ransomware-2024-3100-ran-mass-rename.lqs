@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-3100 — Mass File Rename (argonauts)
+// Status: experimental | Level: high | ID: fcfd22b9-7430-593e-a9fb-879dc1153142
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

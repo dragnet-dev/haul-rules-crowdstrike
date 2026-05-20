@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-6311 — Mass File Rename (safepay)
+// Status: experimental | Level: high | ID: 0d25724e-0455-594f-b5ad-434015b622c2
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

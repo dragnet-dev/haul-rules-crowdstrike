@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-1015 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 73fae8dc-76ae-5754-9aa8-b2a03647fe2a
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/piramal.com*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0175 — Mass File Rename (icefire)
+// Status: deprecated | Level: high | ID: a1eb3a4e-0014-5767-a58b-58a340c9a884
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

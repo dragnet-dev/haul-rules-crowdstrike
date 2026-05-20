@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-2376 — Mass File Rename (pear)
+// Status: experimental | Level: high | ID: 29934b0a-3d78-581a-955d-188b331b07ab
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

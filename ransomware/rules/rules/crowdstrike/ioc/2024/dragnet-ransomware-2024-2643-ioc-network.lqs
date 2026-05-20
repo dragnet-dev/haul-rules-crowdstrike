@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2643 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: db2da622-c0de-5639-b70b-e83e995fb81e
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://handala.to/innovalve-bio-medical-hacked/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

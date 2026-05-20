@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-4998 — Mass File Rename (skira)
+// Status: experimental | Level: high | ID: a87d9579-241e-5f5b-adeb-e4db30e42e63
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2024-1055 — Vulnerable Base Image Pull
+// Status: deprecated | Level: critical | ID: 959c99df-bcdc-5961-a8c2-f387ffbceda7
+
+#event_simpleName=*
+| (ImageFileName = *redhat/ubi9:* OR ImageFileName = *ubuntu:16.04* OR ImageFileName = *ubuntu:18.04* OR ImageFileName = *ubuntu:18.10* OR ImageFileName = *ubuntu:19.04* OR ImageFileName = *ubuntu:19.10* OR ImageFileName = *ubuntu:20.04* OR ImageFileName = *ubuntu:20.10* OR ImageFileName = *ubuntu:21.04* OR ImageFileName = *ubuntu:21.10* OR ImageFileName = *ubuntu:22.04* OR ImageFileName = *ubuntu:22.10* OR ImageFileName = *ubuntu:23.04* OR ImageFileName = *ubuntu:23.10* OR ImageFileName = *ubuntu:24.04*)
+| table([timestamp, ComputerName])
+| limit(1000)

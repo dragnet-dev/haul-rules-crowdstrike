@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-4176 — Mass File Rename (noescape)
+// Status: experimental | Level: high | ID: 6d322980-1819-5e04-85ed-6b95ebe01740
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

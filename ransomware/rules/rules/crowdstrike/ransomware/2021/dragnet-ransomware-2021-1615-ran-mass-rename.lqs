@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-1615 — Mass File Rename (mountlocker)
+// Status: deprecated | Level: high | ID: 78bed306-046f-5dd6-80f8-d433d222a7a6
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

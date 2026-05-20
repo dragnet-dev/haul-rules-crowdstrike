@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-2470 — Mass File Rename (madliberator)
+// Status: experimental | Level: high | ID: b3e2a854-6b18-5c22-aae9-9d6a5567c6d1
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

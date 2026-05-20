@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0454 — Ransomware C2 Communication
+// Status: stable | Level: high | ID: 6c7e5baa-ac22-5276-87e0-ee0355f11e05
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion/companies/triumphinter*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-5291 — Mass File Rename (frag)
+// Status: deprecated | Level: high | ID: 1307ef2e-1235-5524-b213-a15ccac50884
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

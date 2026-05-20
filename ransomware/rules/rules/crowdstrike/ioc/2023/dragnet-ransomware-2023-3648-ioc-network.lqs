@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3648 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: caa07ecc-0c0b-5921-a8bf-ff93124eed81
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=NY%20pharma*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

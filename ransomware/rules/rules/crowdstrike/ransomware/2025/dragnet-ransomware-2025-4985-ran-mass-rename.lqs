@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-4985 — Mass File Rename (clop)
+// Status: deprecated | Level: high | ID: b4bd8ab1-7e70-5a95-bb55-c3d080df8103
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

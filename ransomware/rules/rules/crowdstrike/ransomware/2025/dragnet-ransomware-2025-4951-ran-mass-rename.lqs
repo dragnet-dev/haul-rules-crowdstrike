@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-4951 — Mass File Rename (SilentRansomGroup)
+// Status: deprecated | Level: high | ID: aeb81595-fced-59b2-aeb5-94f29d555020
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

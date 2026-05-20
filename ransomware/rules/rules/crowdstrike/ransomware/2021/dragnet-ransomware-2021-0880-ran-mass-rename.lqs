@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0880 — Mass File Rename (darkleakmarket)
+// Status: deprecated | Level: high | ID: 8142f2a9-d72e-5236-bcf6-291541b97944
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

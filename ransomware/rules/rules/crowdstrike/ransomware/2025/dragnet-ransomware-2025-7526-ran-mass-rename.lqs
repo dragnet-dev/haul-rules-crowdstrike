@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-7526 — Mass File Rename (lynx)
+// Status: experimental | Level: high | ID: 1858edaa-c93e-51c4-bc43-818555c59c00
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

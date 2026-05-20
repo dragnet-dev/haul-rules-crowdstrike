@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0944 — Mass File Rename (blackbyte)
+// Status: deprecated | Level: high | ID: f4ac97cf-9cca-540d-bb84-9716043a1d2a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

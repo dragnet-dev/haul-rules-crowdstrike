@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0933 — Ransomware C2 Communication
+// Status: test | Level: high | ID: a86c9ff1-409a-5e4d-bd81-ae674ae42765
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/mark-finn-co-uk*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

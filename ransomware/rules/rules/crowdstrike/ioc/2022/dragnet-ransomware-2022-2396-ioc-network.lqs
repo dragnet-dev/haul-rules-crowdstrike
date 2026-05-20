@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2022-2396 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 57c8746f-13da-510c-a6ff-c2286b6a6f06
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://3f7nxkjway3d223j27lyad7v5cgmyaifesycvmwq7i7cbs23lb6llryd.onion/companies/abf4e26f-724c-4d79-b8c6-4d2809df804d*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

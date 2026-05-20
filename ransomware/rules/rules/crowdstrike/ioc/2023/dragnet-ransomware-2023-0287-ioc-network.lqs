@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0287 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 214e28ab-0a23-501f-b599-a3c47de9b567
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/etic-groupe.com*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

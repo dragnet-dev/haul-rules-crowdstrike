@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0245 — Mass File Rename (medusalocker)
+// Status: experimental | Level: high | ID: fe0b733f-a86f-5c44-a132-57660806d4ca
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

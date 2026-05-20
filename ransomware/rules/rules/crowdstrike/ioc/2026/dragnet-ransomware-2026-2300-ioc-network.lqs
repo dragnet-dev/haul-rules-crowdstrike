@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2300 — Ransomware C2 Communication
+// Status: stable | Level: high | ID: a76dcdcb-e94e-54c1-9702-cb6d60f0fcce
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://netrunrsb3bivj5gnwajzxlig5qkteb6edgthxj7fmsvhkzxtwfxwaad.onion/view/Shiraume*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

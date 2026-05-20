@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0799 — Mass File Rename (marketo)
+// Status: deprecated | Level: high | ID: 7feac0cf-f6c5-5831-a405-ab31d93e723f
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

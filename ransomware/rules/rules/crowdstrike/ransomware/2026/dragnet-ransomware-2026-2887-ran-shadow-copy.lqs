@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2887 — Shadow Copy Deletion (interlock)
+// Status: stable | Level: high | ID: a5647595-fc1e-5f07-88d5-92ddb5dbf0b8
+
+#event_simpleName=ProcessRollup2
+| 1ofselection_
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

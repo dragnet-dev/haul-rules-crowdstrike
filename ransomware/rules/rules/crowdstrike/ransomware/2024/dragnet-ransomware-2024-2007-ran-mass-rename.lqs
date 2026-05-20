@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-2007 — Mass File Rename (raworld)
+// Status: experimental | Level: high | ID: 7b07dd01-f74a-5743-b8c5-a368189566fb
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

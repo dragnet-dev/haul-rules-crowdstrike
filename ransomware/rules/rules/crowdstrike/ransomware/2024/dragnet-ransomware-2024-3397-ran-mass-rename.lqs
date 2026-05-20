@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-3397 — Mass File Rename (mogilevich)
+// Status: deprecated | Level: high | ID: 8bb99c02-d1be-56da-9d89-6012c46fbeb7
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

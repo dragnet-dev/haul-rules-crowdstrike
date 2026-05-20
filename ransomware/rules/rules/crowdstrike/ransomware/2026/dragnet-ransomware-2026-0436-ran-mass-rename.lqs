@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0436 — Mass File Rename (kairos)
+// Status: deprecated | Level: high | ID: 1238da73-1ab5-576b-a50d-d5a62651dcac
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

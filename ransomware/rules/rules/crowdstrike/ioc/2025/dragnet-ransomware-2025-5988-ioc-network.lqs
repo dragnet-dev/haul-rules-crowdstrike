@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5988 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: e9a53acf-d361-54a8-8805-fc031d0bf128
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion/Novaevo*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

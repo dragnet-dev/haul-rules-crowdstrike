@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3757 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: cdfb2470-5570-5071-9217-53a401c0ee25
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://ransomed.vc/ig.html*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

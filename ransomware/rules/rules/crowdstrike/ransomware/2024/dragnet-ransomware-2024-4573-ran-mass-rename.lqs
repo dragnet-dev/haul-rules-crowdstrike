@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-4573 — Mass File Rename (ransomhub)
+// Status: deprecated | Level: high | ID: 7c0ce041-6d9d-532d-986a-148fae925fcc
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

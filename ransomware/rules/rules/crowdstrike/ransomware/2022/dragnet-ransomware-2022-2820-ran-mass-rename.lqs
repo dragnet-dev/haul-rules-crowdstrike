@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2820 — Mass File Rename (blackbasta)
+// Status: deprecated | Level: high | ID: 9b4b11d5-adc0-5096-8977-70369862aa1a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0035 — Mass File Rename (direwolf)
+// Status: experimental | Level: high | ID: e2a8254a-1c11-590a-ac63-62c76e37e88f
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

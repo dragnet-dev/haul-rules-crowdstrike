@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2640 — Mass File Rename (freecivilian)
+// Status: deprecated | Level: high | ID: 2fbe83d6-b35c-54fa-b623-9ba0c9c00ed9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

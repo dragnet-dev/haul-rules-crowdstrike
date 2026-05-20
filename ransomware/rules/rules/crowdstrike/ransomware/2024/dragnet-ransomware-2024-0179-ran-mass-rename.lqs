@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-0179 — Mass File Rename (arcusmedia)
+// Status: experimental | Level: high | ID: 06d0bbea-1492-5d75-92fe-d4f2a9c6398d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

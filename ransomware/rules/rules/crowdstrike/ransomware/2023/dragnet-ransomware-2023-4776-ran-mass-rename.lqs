@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-4776 — Mass File Rename (lorenz)
+// Status: deprecated | Level: high | ID: 6bb2b128-0627-5a6f-8270-d82fbf94069a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

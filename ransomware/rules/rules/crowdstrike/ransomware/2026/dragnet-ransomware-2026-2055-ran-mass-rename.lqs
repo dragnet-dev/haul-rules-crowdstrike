@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2055 — Mass File Rename (aurora)
+// Status: stable | Level: high | ID: 4ba7adbd-d274-5cb6-bc41-6632961202bb
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

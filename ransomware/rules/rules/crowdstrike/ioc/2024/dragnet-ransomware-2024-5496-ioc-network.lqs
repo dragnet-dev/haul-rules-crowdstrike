@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5496 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 51567cff-dce5-50e5-9090-5209aa69f79b
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/28/gemicar*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

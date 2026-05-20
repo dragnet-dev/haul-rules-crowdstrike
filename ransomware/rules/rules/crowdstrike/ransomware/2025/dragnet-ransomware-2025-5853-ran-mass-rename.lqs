@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-5853 — Mass File Rename (gunra)
+// Status: experimental | Level: high | ID: 293f8223-5ba5-5c5c-b115-60a3695b1ffd
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

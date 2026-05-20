@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3496 — Mass File Rename (darkrace)
+// Status: experimental | Level: high | ID: e054410e-f3ab-5b91-9e2d-2b7b1060c678
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

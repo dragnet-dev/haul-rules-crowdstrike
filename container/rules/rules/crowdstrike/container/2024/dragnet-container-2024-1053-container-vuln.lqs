@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2024-1053 — Vulnerable Base Image Pull
+// Status: deprecated | Level: critical | ID: c0d2ce2b-5201-51cd-ae7e-17ead7c90605
+
+#event_simpleName=*
+| (ImageFileName = *alpine:3.12* OR ImageFileName = *alpine:3.13* OR ImageFileName = *alpine:3.14* OR ImageFileName = *alpine:3.15* OR ImageFileName = *alpine:3.16* OR ImageFileName = *alpine:3.17* OR ImageFileName = *alpine:3.18* OR ImageFileName = *alpine:3.19* OR ImageFileName = *alpine:3.20* OR ImageFileName = *alpine:3.21* OR ImageFileName = *alpine:3.22* OR ImageFileName = *alpine:3.23* OR ImageFileName = *alpine edge:* OR ImageFileName = *redhat/ubi9:* OR ImageFileName = *ubuntu:16.04* OR ImageFileName = *ubuntu:18.04* OR ImageFileName = *ubuntu:19.10* OR ImageFileName = *ubuntu:20.04* OR ImageFileName = *ubuntu:20.10* OR ImageFileName = *ubuntu:21.04* OR ImageFileName = *ubuntu:21.10* OR ImageFileName = *ubuntu:22.04* OR ImageFileName = *ubuntu:22.10* OR ImageFileName = *ubuntu:23.04* OR ImageFileName = *ubuntu:23.10* OR ImageFileName = *ubuntu:24.04*)
+| table([timestamp, ComputerName])
+| limit(1000)

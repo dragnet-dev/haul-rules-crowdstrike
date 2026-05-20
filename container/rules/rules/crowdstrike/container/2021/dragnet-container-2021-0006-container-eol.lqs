@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2021-0006 — End-of-Life Base Image
+// Status: deprecated | Level: high | ID: a6a5e02d-c24a-503b-bce4-9346bd1f6083
+
+#event_simpleName=*
+| (ImageFileName = alpine:3.10.* OR ImageFileName = alpine:3.10-*)
+| table([timestamp, ComputerName])
+| limit(1000)

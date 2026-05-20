@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-2127 — Mass File Rename (safepay)
+// Status: deprecated | Level: high | ID: 15cb48de-178d-5417-a211-25d1380f6f88
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

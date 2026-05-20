@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0435 — Mass File Rename (apt73)
+// Status: stable | Level: high | ID: 6e6fa247-cae9-5d13-bd74-c1983c8642b4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

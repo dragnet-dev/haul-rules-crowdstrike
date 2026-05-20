@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0257 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: f3886d9d-2572-50b5-a273-36620cf0c24a
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/handok.com*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

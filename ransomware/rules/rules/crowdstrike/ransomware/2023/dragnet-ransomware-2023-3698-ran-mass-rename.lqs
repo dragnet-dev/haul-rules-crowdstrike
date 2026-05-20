@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3698 — Mass File Rename (darkrace)
+// Status: experimental | Level: high | ID: de5d9ddb-0590-5c74-98cb-7181cccb619c
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

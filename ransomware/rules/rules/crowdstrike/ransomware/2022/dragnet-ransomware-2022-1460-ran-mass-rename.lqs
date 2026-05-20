@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-1460 — Mass File Rename (kelvinsecurity)
+// Status: deprecated | Level: high | ID: 14c0c882-4bf9-5296-ad5c-45fee63237cd
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

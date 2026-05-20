@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-4036 — Mass File Rename (killsec)
+// Status: experimental | Level: high | ID: c8b305e6-3726-5a1a-bc2e-5a1999d31b77
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

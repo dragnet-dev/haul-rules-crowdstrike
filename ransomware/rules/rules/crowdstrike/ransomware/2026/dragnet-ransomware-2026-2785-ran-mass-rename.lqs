@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2785 — Mass File Rename (everest)
+// Status: stable | Level: high | ID: d090e5a4-fc63-5d7e-903f-a96749742efc
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

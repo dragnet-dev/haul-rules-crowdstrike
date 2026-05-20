@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2961 — Mass File Rename (royal)
+// Status: deprecated | Level: high | ID: 64791d03-2458-5fcc-8ab1-2f86ad44bdc7
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

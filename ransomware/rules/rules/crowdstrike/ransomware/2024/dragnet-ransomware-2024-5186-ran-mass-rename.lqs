@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-5186 — Mass File Rename (funksec)
+// Status: experimental | Level: high | ID: ab720a59-ee88-58de-b028-6bba74de88f3
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

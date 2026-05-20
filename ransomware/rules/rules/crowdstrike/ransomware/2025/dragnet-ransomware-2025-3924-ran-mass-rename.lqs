@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-3924 — Mass File Rename (ElDorado)
+// Status: deprecated | Level: high | ID: f09c89f1-19ef-5d78-85b6-fe18d2cc3adc
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

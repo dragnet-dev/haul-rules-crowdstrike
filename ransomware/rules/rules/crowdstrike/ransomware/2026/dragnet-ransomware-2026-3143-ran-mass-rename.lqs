@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-3143 — Mass File Rename (lapsus$)
+// Status: deprecated | Level: high | ID: c26b7ce2-c0ad-5ba6-8755-c4e264df9fc8
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

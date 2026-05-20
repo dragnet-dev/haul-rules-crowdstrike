@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-1113 — Mass File Rename (doppelpaymer)
+// Status: deprecated | Level: high | ID: 9f0067ff-3d18-5698-8696-1ee59ace0bf4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

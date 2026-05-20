@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-7295 — Mass File Rename (warlock)
+// Status: deprecated | Level: high | ID: 335e388d-d5ed-587f-881b-8bfecc83b815
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2908 — Mass File Rename (insomnia)
+// Status: stable | Level: high | ID: 35539e7b-208a-59dc-9dc6-a2264af472cb
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [IOC]: dragnet-supply-2026-118729 — C2 Network Communication
+// Status: stable | Level: critical | ID: 65d51578-7bc9-57b7-bf33-75f4336cc311
+
+#event_simpleName=NetworkConnectIP4
+| (DomainName = *git-tanstack.com* OR DomainName = *t.m-kosche.com*) OR RemoteAddressIP4 = *94.154.172.43* OR (DomainName = *https://api.github.com/repos/* OR DomainName = *https://api.github.com/search/commits?q=OhNoWhatsGoingOnWithGitHub&sort=author-date&order=desc&per_page=50* OR DomainName = *https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/* OR DomainName = *https://registry.npmjs.org/-/npm/v1/tokens* OR DomainName = *https://registry.npmjs.org/-/npm/v1/tokens* OR DomainName = *http://filev2.getsession.org/file/*)
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

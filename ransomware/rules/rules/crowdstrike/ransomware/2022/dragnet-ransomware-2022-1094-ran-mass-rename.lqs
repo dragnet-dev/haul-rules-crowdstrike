@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-1094 — Mass File Rename (cuba)
+// Status: deprecated | Level: high | ID: 42ff033a-e437-572d-9ea1-8f77d3f0a0e5
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

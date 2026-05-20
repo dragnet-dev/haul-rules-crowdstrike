@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-5058 — Mass File Rename (hellcat)
+// Status: deprecated | Level: high | ID: cb4b3d75-9bdd-5260-8845-0695c766d091
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

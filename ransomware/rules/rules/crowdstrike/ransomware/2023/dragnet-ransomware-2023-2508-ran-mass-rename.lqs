@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-2508 — Mass File Rename (dispossessor)
+// Status: experimental | Level: high | ID: 76df35f2-8f36-584a-908f-32df602bd4dd
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

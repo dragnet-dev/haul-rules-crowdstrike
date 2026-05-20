@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1531 — Mass File Rename (qilin)
+// Status: experimental | Level: high | ID: 3da340a7-14a7-55a0-8f02-6eac2fc53b6a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

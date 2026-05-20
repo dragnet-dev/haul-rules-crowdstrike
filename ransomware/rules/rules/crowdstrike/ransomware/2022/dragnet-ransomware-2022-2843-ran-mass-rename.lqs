@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2843 — Mass File Rename (quantum)
+// Status: deprecated | Level: high | ID: 0ca18475-ce10-569b-9bcb-57c10e93624d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-3089 — Mass File Rename (worldleaks)
+// Status: experimental | Level: high | ID: 237af0ce-bee2-5789-935c-8adcd799fdf4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

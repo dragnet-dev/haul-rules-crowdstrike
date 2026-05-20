@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-4162 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: ff905183-6fc9-575d-ba52-0afca1024185
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/news/newamericanfunding*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

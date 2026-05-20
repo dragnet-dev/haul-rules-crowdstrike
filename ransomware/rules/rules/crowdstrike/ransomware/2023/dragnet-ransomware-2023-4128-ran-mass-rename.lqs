@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-4128 — Mass File Rename (everest)
+// Status: experimental | Level: high | ID: 49c31b9e-545c-5464-b1e4-c7c6b8fc5e7b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

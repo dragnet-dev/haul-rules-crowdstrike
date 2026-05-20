@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-7808 — Ransomware C2 Communication
+// Status: test | Level: high | ID: 1ee94328-636b-5c62-8d85-a1175837c19a
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion/Company/RellaAssociates/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

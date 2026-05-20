@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-1578 — Mass File Rename (cactus)
+// Status: experimental | Level: high | ID: 49206da8-13d7-59ef-85f6-a897d9e134e4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

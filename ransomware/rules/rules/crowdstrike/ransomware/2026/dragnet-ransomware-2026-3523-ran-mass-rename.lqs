@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-3523 — Mass File Rename (blacknevas)
+// Status: stable | Level: high | ID: 77e4a7d7-6ac6-571f-9f18-1b3929e83cb4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

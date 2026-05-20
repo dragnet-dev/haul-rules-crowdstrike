@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2454 — Mass File Rename (shaoleaks)
+// Status: deprecated | Level: high | ID: ae1e522b-3d38-5854-86ce-0cbefee2ad9a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-5108 — Mass File Rename (stormous)
+// Status: experimental | Level: high | ID: 6f16a395-493b-52b1-998d-c484298b21c1
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

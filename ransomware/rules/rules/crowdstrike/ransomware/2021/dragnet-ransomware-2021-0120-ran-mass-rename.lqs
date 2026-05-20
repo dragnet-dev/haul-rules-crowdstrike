@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0120 — Mass File Rename (blacktor)
+// Status: deprecated | Level: high | ID: 9f6ba073-e572-55bf-98ca-902f1f9e045b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

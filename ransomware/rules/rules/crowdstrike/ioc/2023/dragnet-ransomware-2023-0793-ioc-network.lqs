@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0793 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 8d1177a9-ad6e-58f9-b41c-499f55c5bc0b
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://weerwolven.biz/en/auditexpertnn-ru.html*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

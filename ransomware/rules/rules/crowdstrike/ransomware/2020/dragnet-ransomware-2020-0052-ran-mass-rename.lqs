@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0052 — Mass File Rename (maze)
+// Status: deprecated | Level: high | ID: 6a32a139-4c7d-599d-9e0b-d85aacab4121
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

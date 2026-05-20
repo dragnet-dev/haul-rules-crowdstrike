@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0261 — Ransomware C2 Communication
+// Status: stable | Level: high | ID: c8bec5cc-e5b8-5116-afbe-93a71308afff
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://4e3p3in2bl67hxchuwza7qvnpe7pyeloyztr5fnh257fxkovfhappjyd.onion/shame/raptorsupplies/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

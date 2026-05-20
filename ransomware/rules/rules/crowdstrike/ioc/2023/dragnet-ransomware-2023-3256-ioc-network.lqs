@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3256 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 29af782c-18c8-5335-b23e-5abd07f0343f
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/aarti-industries.com*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

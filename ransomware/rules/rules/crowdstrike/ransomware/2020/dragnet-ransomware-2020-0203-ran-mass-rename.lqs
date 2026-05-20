@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0203 — Mass File Rename (dharma)
+// Status: deprecated | Level: high | ID: ab2e9f96-2683-5921-b18d-a1c3486dc38a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

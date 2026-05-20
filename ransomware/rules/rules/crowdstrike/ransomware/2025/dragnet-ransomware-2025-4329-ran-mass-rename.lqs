@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-4329 — Mass File Rename (cephalus)
+// Status: deprecated | Level: high | ID: fbbfeee6-5ca1-5958-bd2a-9a4fd7ea22b1
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

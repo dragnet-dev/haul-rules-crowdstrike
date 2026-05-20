@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-1982 — Mass File Rename (incransom)
+// Status: test | Level: high | ID: 7a32f437-0aef-5283-9706-dc7808d32603
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

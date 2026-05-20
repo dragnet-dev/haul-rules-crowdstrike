@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-3388 — Mass File Rename (cephalus)
+// Status: experimental | Level: high | ID: c9d2486b-f76e-5da7-948d-443cad66d34d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

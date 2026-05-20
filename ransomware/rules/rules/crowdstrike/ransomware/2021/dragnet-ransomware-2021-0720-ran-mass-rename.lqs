@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0720 — Mass File Rename (sabbath)
+// Status: deprecated | Level: high | ID: 2f63d0af-e10b-576a-9e0c-4c063bb7dba9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

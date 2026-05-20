@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2331 — Mass File Rename (avoslocker)
+// Status: deprecated | Level: high | ID: 675aeeed-1a1b-5b45-ac99-d7a26c12fa6b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

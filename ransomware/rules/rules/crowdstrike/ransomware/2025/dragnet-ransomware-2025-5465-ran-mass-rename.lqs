@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-5465 — Mass File Rename (devman)
+// Status: deprecated | Level: high | ID: 597ceb6c-babd-5e55-8050-394af759758d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

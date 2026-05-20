@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1933 — Mass File Rename (IMNCrew)
+// Status: experimental | Level: high | ID: a4c82d5a-aaf9-509b-9b3c-b26d76273f12
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0273 — Mass File Rename (everest)
+// Status: deprecated | Level: high | ID: e00c8f7e-0ad7-57a0-89a0-f455a463c74b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

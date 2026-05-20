@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0061 — Mass File Rename (blackwater)
+// Status: stable | Level: high | ID: b3c38eb8-9b13-583c-b195-0d29b489cefe
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

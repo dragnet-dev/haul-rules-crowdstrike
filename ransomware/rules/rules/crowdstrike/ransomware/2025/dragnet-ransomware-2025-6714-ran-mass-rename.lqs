@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-6714 — Mass File Rename (beast)
+// Status: experimental | Level: high | ID: 56bb8ac1-3b37-54d8-bb30-a09fe7fd5a37
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

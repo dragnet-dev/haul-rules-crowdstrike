@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-5561 — Mass File Rename (crazyhunter)
+// Status: experimental | Level: high | ID: 5fbecf90-670f-5e55-8170-b65a7264032b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

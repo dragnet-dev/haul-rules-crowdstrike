@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0635 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: f84ffad6-6011-55a7-b6df-c675ff5d64d6
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://werewolves.pro/en/promproektspb-ru.html*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

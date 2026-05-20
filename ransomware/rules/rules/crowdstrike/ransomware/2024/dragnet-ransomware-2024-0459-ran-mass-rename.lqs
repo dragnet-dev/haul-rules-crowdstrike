@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-0459 — Mass File Rename (daixin)
+// Status: deprecated | Level: high | ID: 50b153a8-1c94-5b1a-b8fe-b2c42de5a43b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)
