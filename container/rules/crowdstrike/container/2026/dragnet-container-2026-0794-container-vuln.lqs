@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2026-0794 — Vulnerable Base Image Pull
+// Status: deprecated | Level: high | ID: 7ebceac0-5287-571a-b286-62823972c407
+
+#event_simpleName=*
+| (ImageFileName = *amazonlinux:1* OR ImageFileName = *debian:7* OR ImageFileName = *oraclelinux:5* OR ImageFileName = *oraclelinux:6* OR ImageFileName = *oraclelinux:7* OR ImageFileName = *ubuntu:12.04* OR ImageFileName = *ubuntu:14.04* OR ImageFileName = *ubuntu:14.10*)
+| table([timestamp, ComputerName])
+| limit(1000)

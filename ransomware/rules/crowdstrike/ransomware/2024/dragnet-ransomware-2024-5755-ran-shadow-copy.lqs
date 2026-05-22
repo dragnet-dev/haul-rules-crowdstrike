@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-5755 — Shadow Copy Deletion (chort)
+// Status: experimental | Level: high | ID: 2664df59-c851-5bbc-aefc-def295cd1451
+
+#event_simpleName=ProcessRollup2
+| 1ofselection_
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

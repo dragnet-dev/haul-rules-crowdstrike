@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-3485 — Ransomware C2 Communication
+// Status: stable | Level: high | ID: 32132ff0-f83f-52a2-bbaf-8f44568ea33c
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://handala-hack.tw/iranwire-hacked/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-1255 — Mass File Rename (nightspire)
+// Status: deprecated | Level: high | ID: 2ab3bc68-8963-5faa-b258-dbdd3906a5ad
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

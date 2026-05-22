@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2268 — Mass File Rename (donutleaks)
+// Status: deprecated | Level: high | ID: 48cbd91e-3469-5ee4-8550-c704af55d2ff
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

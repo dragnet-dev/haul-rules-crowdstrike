@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3770 — Mass File Rename (losttrust)
+// Status: deprecated | Level: high | ID: cec521cf-2028-511e-8bf3-4c0401a0b91b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

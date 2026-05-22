@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-5076 — Mass File Rename (GDLockerSec)
+// Status: experimental | Level: high | ID: a1ef3058-a0eb-573c-95ef-0a3136c8f9d9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

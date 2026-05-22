@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-1206 — Ransomware C2 Communication
+// Status: test | Level: high | ID: 2b45daff-0c24-51e6-b74b-2d97f9e6594f
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion/Company/AdMark/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2503 — Mass File Rename (secpo)
+// Status: stable | Level: high | ID: f55f62b4-4f87-51c7-869c-0b740abd957d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

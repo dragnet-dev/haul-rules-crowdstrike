@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-2158 — Mass File Rename (obscura)
+// Status: experimental | Level: high | ID: 4339146f-76f9-5d9f-9a48-de4750f251bd
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

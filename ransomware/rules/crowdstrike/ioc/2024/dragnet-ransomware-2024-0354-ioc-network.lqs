@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0354 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 8e82d961-18ee-5895-b6f2-ef128bbdf59e
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/41/namforce-life-insurance*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

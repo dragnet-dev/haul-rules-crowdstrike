@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-3049 — Mass File Rename (lockbit3)
+// Status: deprecated | Level: high | ID: fd13a04e-d19e-596a-97ca-dc3f3562bea4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

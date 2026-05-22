@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0982 — Mass File Rename (genesis)
+// Status: experimental | Level: high | ID: 5f057010-3319-579a-9807-151e2817ef7d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

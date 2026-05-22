@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-1707 — Mass File Rename (alphv)
+// Status: deprecated | Level: high | ID: c08dee70-a39c-5dba-a70c-7fc50a10a7bf
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

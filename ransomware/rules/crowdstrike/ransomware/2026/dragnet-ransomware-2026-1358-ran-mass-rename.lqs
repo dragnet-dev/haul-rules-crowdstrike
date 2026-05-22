@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-1358 — Mass File Rename (handala)
+// Status: stable | Level: high | ID: 820518e4-48c6-5a0e-a3ef-0271c464f779
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-0963 — Mass File Rename (rancoz)
+// Status: experimental | Level: high | ID: 27024773-ea96-5f3f-aeac-712516a3f2b2
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-2175 — Mass File Rename (losttrust)
+// Status: deprecated | Level: high | ID: 6accff97-d929-5af9-b8d0-fb482e5f6fbd
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

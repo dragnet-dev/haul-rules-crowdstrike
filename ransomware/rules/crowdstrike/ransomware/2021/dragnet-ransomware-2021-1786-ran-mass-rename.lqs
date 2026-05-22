@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-1786 — Mass File Rename (groove)
+// Status: deprecated | Level: high | ID: b6117fa9-47e0-5a3e-9723-a731e1f08a8f
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

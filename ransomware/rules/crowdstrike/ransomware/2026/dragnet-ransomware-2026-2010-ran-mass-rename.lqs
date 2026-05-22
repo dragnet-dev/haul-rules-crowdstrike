@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-2010 — Mass File Rename (vect)
+// Status: deprecated | Level: high | ID: b4a66ec9-b982-595f-aa45-90684a0ecbee
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

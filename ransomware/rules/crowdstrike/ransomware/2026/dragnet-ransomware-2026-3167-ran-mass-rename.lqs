@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-3167 — Mass File Rename (bravox)
+// Status: stable | Level: high | ID: 45d3132e-dcd8-5c42-9e3a-d3ac6c15965d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

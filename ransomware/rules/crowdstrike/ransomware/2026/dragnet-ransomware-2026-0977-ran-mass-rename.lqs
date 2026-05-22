@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0977 — Mass File Rename (gunra)
+// Status: stable | Level: high | ID: a64bba88-2ad6-592f-a630-5064f0f2d71e
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

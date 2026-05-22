@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2020-0182 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 8c7920f0-c077-5497-b445-f130ab9939f5
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://dispossessor.com/blogs/28*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

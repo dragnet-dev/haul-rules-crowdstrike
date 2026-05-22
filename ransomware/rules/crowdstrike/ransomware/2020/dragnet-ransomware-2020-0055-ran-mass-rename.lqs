@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0055 — Mass File Rename (dispossessor)
+// Status: experimental | Level: high | ID: 913f5558-9f2c-552c-a601-c307e5597c6e
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

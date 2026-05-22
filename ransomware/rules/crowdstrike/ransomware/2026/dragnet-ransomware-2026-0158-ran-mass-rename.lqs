@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0158 — Mass File Rename (coinbasecartel)
+// Status: test | Level: high | ID: 56ac10ba-4bf2-5c3e-a507-8c21d6c35965
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

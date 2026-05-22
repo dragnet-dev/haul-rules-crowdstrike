@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-4718 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 14770a46-1fa9-5d8f-b6fc-c35ac9c89bad
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://funksec.top/stayzapp.in*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

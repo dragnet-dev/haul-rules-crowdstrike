@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-5395 — Mass File Rename (weyhro)
+// Status: experimental | Level: high | ID: 74ed764b-69d0-530b-b19a-fdad698ec548
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

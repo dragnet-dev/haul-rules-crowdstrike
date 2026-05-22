@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1200 — Mass File Rename (nitrogen)
+// Status: test | Level: high | ID: 719d7775-9e96-5b5b-a709-2e605dceacce
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

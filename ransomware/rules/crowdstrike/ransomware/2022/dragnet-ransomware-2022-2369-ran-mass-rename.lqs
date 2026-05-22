@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-2369 — Mass File Rename (memedusalockerdusa)
+// Status: deprecated | Level: high | ID: a644cf06-896a-57eb-b1f4-92850583d4ce
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

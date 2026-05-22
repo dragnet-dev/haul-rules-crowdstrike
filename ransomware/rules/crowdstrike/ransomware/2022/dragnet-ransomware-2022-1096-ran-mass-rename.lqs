@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-1096 — Mass File Rename (vicesociety)
+// Status: deprecated | Level: high | ID: 1f2c5210-cab6-5508-a28d-30ab0a5f2fce
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

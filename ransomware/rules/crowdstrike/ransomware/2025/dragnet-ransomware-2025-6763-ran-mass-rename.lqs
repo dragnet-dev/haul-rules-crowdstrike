@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-6763 — Mass File Rename (blackshrantac)
+// Status: experimental | Level: high | ID: 291ffded-f403-5e8e-9886-532cda0fe6c2
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

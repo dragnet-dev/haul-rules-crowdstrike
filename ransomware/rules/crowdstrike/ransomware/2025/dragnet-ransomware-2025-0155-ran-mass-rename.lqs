@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0155 — Mass File Rename (metaencryptor)
+// Status: experimental | Level: high | ID: 1130c8b7-a51e-57e4-b62b-66be112b0612
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

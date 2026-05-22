@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0383 — Mass File Rename (orca)
+// Status: experimental | Level: high | ID: f3c55e36-b9a1-5631-a747-af9ccadc914f
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

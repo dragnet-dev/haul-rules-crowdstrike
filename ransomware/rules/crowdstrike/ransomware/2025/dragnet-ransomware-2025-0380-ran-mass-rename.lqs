@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0380 — Mass File Rename (kawa4096)
+// Status: deprecated | Level: high | ID: 1dc2c3f9-8b9e-5147-9ed2-bf90657f6977
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

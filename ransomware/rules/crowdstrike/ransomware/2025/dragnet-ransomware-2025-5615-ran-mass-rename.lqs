@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-5615 — Mass File Rename (payoutsking)
+// Status: experimental | Level: high | ID: 88d08f7e-68dd-57fd-9326-b0ccc0ee3382
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1192 — Mass File Rename (termite)
+// Status: experimental | Level: high | ID: 6d8ce6fa-795e-5a5a-86bd-9958990a0153
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

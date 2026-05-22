@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-1269 — Mass File Rename (onyx)
+// Status: deprecated | Level: high | ID: 3b2d9daf-0edb-550e-a15a-4c6390f06b32
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

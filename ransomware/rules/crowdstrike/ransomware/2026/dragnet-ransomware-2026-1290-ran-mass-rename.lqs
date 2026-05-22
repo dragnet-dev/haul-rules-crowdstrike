@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-1290 — Mass File Rename (AiLock)
+// Status: deprecated | Level: high | ID: 62c352f7-ff17-5174-b1b3-3743e5f98740
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

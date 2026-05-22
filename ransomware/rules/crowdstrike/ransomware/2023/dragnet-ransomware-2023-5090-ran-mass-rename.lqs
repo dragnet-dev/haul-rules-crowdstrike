@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-5090 — Mass File Rename (toufan)
+// Status: deprecated | Level: high | ID: fe17ddea-fa8d-53e1-bfee-0ca7aad0aacf
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0422 — Mass File Rename (cuba)
+// Status: deprecated | Level: high | ID: 9079b807-089a-530d-ad0f-a2391c9141ca
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2685 — Ransomware C2 Communication
+// Status: test | Level: high | ID: f66c6b83-f98a-5957-966b-53cdc13eaf74
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://pifk3xu3vad6cuxsjll4qjomyaaaoyvnyqppro75pazadzctrrvpdnyd.onion/#kreisel*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

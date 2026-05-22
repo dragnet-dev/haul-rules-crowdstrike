@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3663 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 26cd5cd2-fc85-5338-b0b1-9de1359613d4
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://werewolves.pro/en/carmoney-ru.html*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

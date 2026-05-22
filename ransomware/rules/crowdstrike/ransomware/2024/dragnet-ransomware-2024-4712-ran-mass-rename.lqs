@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-4712 — Mass File Rename (metaencryptor)
+// Status: experimental | Level: high | ID: 5bf5f4d4-d540-5377-a7fb-799f31e445d4
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0459 — Mass File Rename (titan)
+// Status: stable | Level: high | ID: 670be6af-aaf2-59e5-8000-1eb63bea13e1
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0567 — Mass File Rename (monti)
+// Status: deprecated | Level: high | ID: 61f86ccc-1c63-5a00-ac7a-afa6c5e54446
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

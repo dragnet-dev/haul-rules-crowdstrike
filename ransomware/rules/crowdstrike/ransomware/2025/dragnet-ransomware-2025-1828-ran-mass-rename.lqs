@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1828 — Mass File Rename (ralord)
+// Status: experimental | Level: high | ID: ca06cede-6fe5-5cdd-beab-c8662d7816f9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-6198 — Mass File Rename (spacebears)
+// Status: experimental | Level: high | ID: efa61a04-bc07-518e-970e-e74c43307d1c
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

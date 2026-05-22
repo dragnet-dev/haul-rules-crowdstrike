@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0689 — Ransomware C2 Communication
+// Status: test | Level: high | ID: a92bf2b4-4d39-55c2-b860-f7068a28ff0c
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://peargxn3oki34c4savcbcfqofjjwjnnyrlrbszfv6ujlx36mhrh57did.onion/Companies/pavlus*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

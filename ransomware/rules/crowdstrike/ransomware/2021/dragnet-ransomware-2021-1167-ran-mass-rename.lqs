@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-1167 — Mass File Rename (bonacigroup)
+// Status: deprecated | Level: high | ID: 320257fb-1784-5ee8-81b2-c208ad730cb5
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

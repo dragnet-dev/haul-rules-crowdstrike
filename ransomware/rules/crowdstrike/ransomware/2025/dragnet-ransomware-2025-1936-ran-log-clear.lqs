@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1936 — Event Log Clearing (interlock)
+// Status: experimental | Level: high | ID: 6ba70976-6de6-5baa-9849-fd7771af60f4
+
+#event_simpleName=ProcessRollup2
+| 1ofselection_
+| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
+| limit(1000)

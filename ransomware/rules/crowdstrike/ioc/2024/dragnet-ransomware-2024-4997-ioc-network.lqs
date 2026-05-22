@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-4997 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: d5d8c16a-1ad7-5764-b833-74ae2a34216b
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://kill432ltnkqvaqntbalnsgojqqs2wz4lhnamrqjg66tq6fuvcztilyd.onion/post/m7f29d2WwLid6sGwx0RE2aXwz*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

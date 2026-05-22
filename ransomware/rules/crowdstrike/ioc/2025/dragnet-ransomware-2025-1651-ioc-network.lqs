@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-1651 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: d0e665f4-7984-5bc3-b18b-e1a1b672ba55
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://imncrewwfkbjkhr2oylerfm5qtbzfphhmpcfag43xc2kfgvluqtlgoid.onion/files/data/repremundo.zip*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

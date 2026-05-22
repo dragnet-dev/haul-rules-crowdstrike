@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-0911 — Mass File Rename (mallox)
+// Status: deprecated | Level: high | ID: a12f122d-3018-5205-81fd-0dffd80219fe
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

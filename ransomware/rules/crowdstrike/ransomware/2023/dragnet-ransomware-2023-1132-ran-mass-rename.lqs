@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-1132 — Mass File Rename (karakurt)
+// Status: experimental | Level: high | ID: dad528e3-06ee-5a77-b294-3eb343575049
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3841 — Mass File Rename (trigona)
+// Status: experimental | Level: high | ID: 62b8a9d5-1764-55da-a4df-f70ccf785b70
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

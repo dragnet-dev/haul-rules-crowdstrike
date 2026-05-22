@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-3400 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 7c8527fd-834c-5a4d-982b-9c05f0ec88db
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion/varico*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

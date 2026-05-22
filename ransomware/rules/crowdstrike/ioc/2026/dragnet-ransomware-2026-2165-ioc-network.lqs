@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2165 — Ransomware C2 Communication
+// Status: stable | Level: high | ID: 3182d5a3-bfa1-5b94-b47e-5ecd36e315b9
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/news/Liberty_Mutual_Insurance/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

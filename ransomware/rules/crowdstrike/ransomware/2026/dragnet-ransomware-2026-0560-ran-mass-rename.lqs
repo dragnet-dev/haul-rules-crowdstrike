@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0560 — Mass File Rename (fulcrumsec)
+// Status: stable | Level: high | ID: 626341bd-18db-5d47-9a46-faf100b6cdee
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

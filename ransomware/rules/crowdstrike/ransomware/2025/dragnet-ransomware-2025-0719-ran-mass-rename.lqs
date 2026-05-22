@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0719 — Mass File Rename (lockbit5)
+// Status: test | Level: high | ID: ba605920-b386-54d3-bfb5-58037f41c005
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

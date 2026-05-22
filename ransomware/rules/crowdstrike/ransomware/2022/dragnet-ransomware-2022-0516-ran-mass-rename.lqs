@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0516 — Mass File Rename (suncrypt)
+// Status: deprecated | Level: high | ID: 04f1e8e4-3eea-5a69-90e7-0b23207df17a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

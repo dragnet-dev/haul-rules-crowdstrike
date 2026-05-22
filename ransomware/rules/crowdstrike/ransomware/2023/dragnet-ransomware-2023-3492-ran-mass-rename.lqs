@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3492 — Mass File Rename (malekteam)
+// Status: experimental | Level: high | ID: c792f610-756c-5d2e-8dd7-4ff227edac1f
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

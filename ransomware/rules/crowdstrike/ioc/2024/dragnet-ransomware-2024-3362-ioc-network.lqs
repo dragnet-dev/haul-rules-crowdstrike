@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-3362 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: c7b8fb01-87bf-595c-b104-407cdeafd64d
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://lynxblog.net/leaks/672f0ef4dab69e0ba2cdc41b*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

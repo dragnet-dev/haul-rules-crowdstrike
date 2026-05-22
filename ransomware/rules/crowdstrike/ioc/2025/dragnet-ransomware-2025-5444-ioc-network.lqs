@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5444 — Ransomware C2 Communication
+// Status: test | Level: high | ID: 354f9370-2d61-5768-b206-582e25be8a84
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://peargxn3oki34c4savcbcfqofjjwjnnyrlrbszfv6ujlx36mhrh57did.onion/Companies/iroquoismemorial*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

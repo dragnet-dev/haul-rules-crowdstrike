@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0420 — Mass File Rename (darkside)
+// Status: deprecated | Level: high | ID: 7a6ec460-97e6-5ef6-88df-34323f4ac89d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-2464 — Mass File Rename (shinyhunters)
+// Status: experimental | Level: high | ID: 28677834-1a86-598e-ba52-7da45e8ed822
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

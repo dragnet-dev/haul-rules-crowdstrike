@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0649 — Mass File Rename (karakurt)
+// Status: deprecated | Level: high | ID: 680fd68a-5ce8-5198-9627-a299de737602
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

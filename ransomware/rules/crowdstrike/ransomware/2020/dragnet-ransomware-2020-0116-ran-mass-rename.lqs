@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2020-0116 — Mass File Rename (suncrypt)
+// Status: deprecated | Level: high | ID: 2abe46a8-0b0f-5baa-98b0-e22fa2e7e28d
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

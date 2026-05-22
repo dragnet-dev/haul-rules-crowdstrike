@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0772 — Mass File Rename (LeakBazaar)
+// Status: stable | Level: high | ID: 0302ac15-703e-5e79-b25d-1b4641aa60bd
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

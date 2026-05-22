@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2006-0001 — End-of-Life Base Image
+// Status: deprecated | Level: high | ID: 33e888a9-da0e-5c8d-ae8a-6a031ac878d5
+
+#event_simpleName=*
+| (ImageFileName = ubuntu:4.10.* OR ImageFileName = ubuntu:4.10-*)
+| table([timestamp, ComputerName])
+| limit(1000)

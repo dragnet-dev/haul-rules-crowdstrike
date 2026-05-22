@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-1175 — Mass File Rename (alphv)
+// Status: experimental | Level: high | ID: 8ba6571e-2191-5c7a-a3cd-dd273338feee
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

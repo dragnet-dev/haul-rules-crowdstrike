@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-1463 — Mass File Rename (payoutsking)
+// Status: deprecated | Level: high | ID: a6b971f9-14d9-5629-b4fd-78ef52935b46
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

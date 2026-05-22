@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-3152 — Mass File Rename (worldleaks)
+// Status: stable | Level: high | ID: ec7199da-525b-5784-bd49-48b4d356638f
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

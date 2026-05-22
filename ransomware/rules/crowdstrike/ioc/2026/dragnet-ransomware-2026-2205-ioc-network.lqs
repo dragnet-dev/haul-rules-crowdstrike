@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2205 — Ransomware C2 Communication
+// Status: stable | Level: high | ID: 01a41403-14af-5f0a-8e1b-58d4f5007cc7
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion/emco-electric-international*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

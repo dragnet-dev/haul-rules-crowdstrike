@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-0322 — Mass File Rename (blacksuit)
+// Status: experimental | Level: high | ID: 6265a636-0106-565a-8cca-48e0bc200d27
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

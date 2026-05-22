@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-0910 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: c152ebf7-7669-5005-9ec8-e81508afbd50
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=combinedpoolandspa-com-usa*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

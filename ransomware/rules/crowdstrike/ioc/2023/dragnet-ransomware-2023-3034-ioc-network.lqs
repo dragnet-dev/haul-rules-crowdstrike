@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3034 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 5ed73649-bb00-5c1b-b348-11e343ad3f0b
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://h3reihqb2y7woqdary2g3bmk3apgtxuyhx4j2ftovbhe3l5svev7bdyd.onion/berjayaclubs/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

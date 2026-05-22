@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-0003 — Mass File Rename (snatch)
+// Status: deprecated | Level: high | ID: e331823f-3f00-5212-adff-58c4fca8e3eb
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

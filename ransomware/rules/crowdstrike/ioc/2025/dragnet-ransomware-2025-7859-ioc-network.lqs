@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-7859 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: 45a559d1-b608-55b5-8e32-2ec32b7cbd05
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *http://tp5cwh6d2b5hekcg6jlhoe6mawa7dlwiv47epvnfmzuaaur2dnaa3uid.onion/peterpauper/*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

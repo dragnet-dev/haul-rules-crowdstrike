@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1014 — Mass File Rename (osiris)
+// Status: deprecated | Level: high | ID: bcdb9349-f4fe-539c-9e42-57293ab38358
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

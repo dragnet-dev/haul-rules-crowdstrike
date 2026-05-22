@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-4572 — Mass File Rename (blackout)
+// Status: experimental | Level: high | ID: c81bd377-a5fa-5a6f-bba8-ce3f5b99948b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

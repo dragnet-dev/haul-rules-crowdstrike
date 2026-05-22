@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-6265 — Mass File Rename (kazu)
+// Status: experimental | Level: high | ID: 2abdfe9f-9817-54b0-a689-d7c46783e0a0
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

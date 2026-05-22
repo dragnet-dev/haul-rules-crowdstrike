@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-1024 — Mass File Rename (monti)
+// Status: experimental | Level: high | ID: 2585fa1a-c81a-5b5b-af3f-054231290e2b
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

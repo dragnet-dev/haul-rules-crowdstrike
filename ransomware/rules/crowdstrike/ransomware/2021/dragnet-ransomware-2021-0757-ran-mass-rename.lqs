@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0757 — Mass File Rename (azroteam)
+// Status: deprecated | Level: high | ID: b69679d0-12ef-5ff0-9281-f3d9b3d3519a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

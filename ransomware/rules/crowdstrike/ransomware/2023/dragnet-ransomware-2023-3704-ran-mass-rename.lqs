@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-3704 — Mass File Rename (werewolves)
+// Status: experimental | Level: high | ID: 86caa1ab-8600-5ff9-b6ba-1e2475648229
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

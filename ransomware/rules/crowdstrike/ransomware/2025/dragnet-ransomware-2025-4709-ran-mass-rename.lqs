@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-4709 — Mass File Rename (fog)
+// Status: experimental | Level: high | ID: e0aa7e67-8be2-5567-a72b-fb5b468f6fbb
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

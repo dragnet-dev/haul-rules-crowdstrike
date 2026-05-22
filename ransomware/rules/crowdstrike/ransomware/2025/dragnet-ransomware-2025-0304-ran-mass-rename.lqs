@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0304 — Mass File Rename (ransomhub)
+// Status: experimental | Level: high | ID: eb4cdb03-54fe-541d-b015-1ba58718fa9c
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

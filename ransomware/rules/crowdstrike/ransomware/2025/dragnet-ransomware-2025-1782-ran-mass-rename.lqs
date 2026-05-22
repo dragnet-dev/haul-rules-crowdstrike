@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-1782 — Mass File Rename (bqtlock)
+// Status: experimental | Level: high | ID: c5099241-88b3-5072-afe7-646c8ef76635
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

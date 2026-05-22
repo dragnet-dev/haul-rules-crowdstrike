@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2022-1245 — Mass File Rename (leaktheanalyst)
+// Status: deprecated | Level: high | ID: c2701350-9a1a-5ad5-a0e5-7497b3a2f09a
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

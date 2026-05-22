@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-4387 — Mass File Rename (ransomcortex)
+// Status: experimental | Level: high | ID: 23d03209-bbd5-55f3-a769-82152245d9b9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

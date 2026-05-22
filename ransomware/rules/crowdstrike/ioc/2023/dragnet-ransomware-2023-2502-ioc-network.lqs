@@ -1,0 +1,7 @@
+// Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-2502 — Ransomware C2 Communication
+// Status: experimental | Level: high | ID: aa7d6c47-aa62-569e-a6ee-d241fe03b893
+
+#event_simpleName=NetworkConnectIP4
+| DomainName = *https://werewolves.pro/en/croc-ru.html*
+| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
+| limit(1000)

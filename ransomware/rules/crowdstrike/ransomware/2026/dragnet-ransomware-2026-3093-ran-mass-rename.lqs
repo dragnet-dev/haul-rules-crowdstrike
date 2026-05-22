@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-3093 — Mass File Rename (securotrop)
+// Status: test | Level: high | ID: b80ca832-6a8e-5ca8-a209-dc5a0a0aed81
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

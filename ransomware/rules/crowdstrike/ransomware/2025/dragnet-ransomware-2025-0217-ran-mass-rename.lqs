@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-0217 — Mass File Rename (coinbasecartel)
+// Status: experimental | Level: high | ID: a86f0338-334b-57cb-8711-87e3fbb22bef
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-5365 — Mass File Rename (sarcoma)
+// Status: deprecated | Level: high | ID: 869b9d3e-a442-5a21-b864-bb986bcb6dd6
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

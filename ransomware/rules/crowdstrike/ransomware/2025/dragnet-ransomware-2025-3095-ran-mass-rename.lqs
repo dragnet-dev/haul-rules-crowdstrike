@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-3095 — Mass File Rename (babuk2)
+// Status: experimental | Level: high | ID: 00e61fb5-bfcc-5410-82c3-49453be92628
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

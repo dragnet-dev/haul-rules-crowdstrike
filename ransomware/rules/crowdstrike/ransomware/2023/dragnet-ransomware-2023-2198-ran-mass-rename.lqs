@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-2198 — Mass File Rename (play)
+// Status: deprecated | Level: high | ID: 98bfa5bf-249d-5152-9e1e-2c328a2b8089
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

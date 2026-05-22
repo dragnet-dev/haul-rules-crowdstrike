@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-4007 — Mass File Rename (kairos)
+// Status: experimental | Level: high | ID: d8736a0b-9d5e-53df-b31e-3c77516d6ef1
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2024-0312 — Mass File Rename (stormous)
+// Status: deprecated | Level: high | ID: 6b0c95a4-4565-5fd8-a0a0-8052298d38d9
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

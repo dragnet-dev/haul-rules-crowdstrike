@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2025-6072 — Mass File Rename (chaos)
+// Status: test | Level: high | ID: f30059c3-1d22-5f9f-ab7d-6448b46c72fe
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0905 — Mass File Rename (tridentlocker)
+// Status: stable | Level: high | ID: 37057364-4dbf-5049-9a70-a0aabcee7aca
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

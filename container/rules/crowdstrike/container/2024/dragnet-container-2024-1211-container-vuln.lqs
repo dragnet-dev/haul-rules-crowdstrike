@@ -1,0 +1,7 @@
+// Dragnet [Container]: dragnet-container-2024-1211 — Vulnerable Base Image Pull
+// Status: deprecated | Level: critical | ID: b42e6955-311a-5c54-b97a-40ba4a0fb30a
+
+#event_simpleName=*
+| (ImageFileName = *alpine:3.15* OR ImageFileName = *alpine:3.16* OR ImageFileName = *alpine:3.17* OR ImageFileName = *alpine:3.18* OR ImageFileName = *alpine:3.19* OR ImageFileName = *alpine:3.20* OR ImageFileName = *alpine:3.21* OR ImageFileName = *alpine:3.22* OR ImageFileName = *alpine:3.23* OR ImageFileName = *alpine edge:*)
+| table([timestamp, ComputerName])
+| limit(1000)

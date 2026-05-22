@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2023-0225 — Mass File Rename (rhysida)
+// Status: experimental | Level: high | ID: a8970af1-6da3-520c-bb21-d71418e620b2
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

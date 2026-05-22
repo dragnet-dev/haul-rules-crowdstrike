@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2021-0155 — Mass File Rename (lockbit2)
+// Status: deprecated | Level: high | ID: 32a5aaa0-f075-5f6a-a2d3-3a37b20f1ca5
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)

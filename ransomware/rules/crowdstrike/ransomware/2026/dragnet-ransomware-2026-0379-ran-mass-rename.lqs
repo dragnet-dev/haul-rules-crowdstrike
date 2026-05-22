@@ -1,0 +1,7 @@
+// Dragnet [Ransomware]: dragnet-ransomware-2026-0379 — Mass File Rename (genesis)
+// Status: test | Level: high | ID: 05e19431-1f81-53f4-9762-b07aa8fead48
+
+#event_simpleName=*
+| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
+| table([timestamp, ComputerName])
+| limit(1000)
