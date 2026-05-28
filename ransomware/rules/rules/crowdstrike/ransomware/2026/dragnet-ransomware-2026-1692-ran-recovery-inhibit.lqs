@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-1692 — Recovery Inhibition (incransom)
-// Status: stable | Level: high | ID: 1cc50bed-2018-5d5c-97c2-39170592e987
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

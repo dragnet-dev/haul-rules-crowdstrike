@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-3993 — Recovery Inhibition (BrainCipher)
-// Status: experimental | Level: high | ID: f365a04d-35c1-5147-ad68-b098710bb1fa
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

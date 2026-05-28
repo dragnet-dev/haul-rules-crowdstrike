@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-2427 — Recovery Inhibition (akira)
-// Status: deprecated | Level: high | ID: c7d635cc-121c-552d-b53e-f04ebda2b1d9
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

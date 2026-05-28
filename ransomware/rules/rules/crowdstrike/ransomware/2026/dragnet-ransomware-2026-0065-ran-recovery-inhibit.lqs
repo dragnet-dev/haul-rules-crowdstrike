@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-0065 — Recovery Inhibition (qilin)
-// Status: stable | Level: high | ID: 4d27d026-e0c6-53e9-9c3e-4ff686c07da8
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

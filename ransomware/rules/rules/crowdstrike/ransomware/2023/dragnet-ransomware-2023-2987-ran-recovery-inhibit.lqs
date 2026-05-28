@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-2987 — Recovery Inhibition (lockbit3)
-// Status: experimental | Level: high | ID: e853664e-1c35-5f27-a3e7-c02c513b8d81
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

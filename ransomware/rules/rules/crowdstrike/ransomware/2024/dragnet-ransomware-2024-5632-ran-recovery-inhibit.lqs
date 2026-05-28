@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-5632 — Recovery Inhibition (play)
-// Status: experimental | Level: high | ID: d5c00e34-e69f-5392-a0ee-ab993567a4a4
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-5752 — Recovery Inhibition (nitrogen)
-// Status: experimental | Level: high | ID: a00a4d68-1bc4-53a9-8091-1579564fbf42
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

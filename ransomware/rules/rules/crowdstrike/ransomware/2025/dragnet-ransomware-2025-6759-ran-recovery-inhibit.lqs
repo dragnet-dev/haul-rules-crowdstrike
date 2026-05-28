@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-6759 — Recovery Inhibition (clop)
-// Status: deprecated | Level: high | ID: 9c0945b3-b376-5086-9e8e-876e6edb0e42
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-5701 — Recovery Inhibition (morpheus)
-// Status: deprecated | Level: high | ID: 46d4cc78-3590-5971-bfec-a2fa419932dc
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-1806 — Recovery Inhibition (kairos)
-// Status: deprecated | Level: high | ID: c858f320-0073-5bff-8f21-f0150b4620e0
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

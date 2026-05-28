@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2021-0690 — Recovery Inhibition (lockbit2)
-// Status: deprecated | Level: high | ID: deb419fe-58a0-5399-ac2d-38b0ff601962
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2021-1537 — Recovery Inhibition (dispossessor)
-// Status: experimental | Level: high | ID: da381afe-8c2c-5312-946f-035c496c3784
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

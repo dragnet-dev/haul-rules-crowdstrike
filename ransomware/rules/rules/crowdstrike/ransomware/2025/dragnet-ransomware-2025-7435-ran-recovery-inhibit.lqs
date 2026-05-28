@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-7435 — Recovery Inhibition (crypto24)
-// Status: deprecated | Level: high | ID: 614fb1e3-a890-5c1b-8811-b72483f12214
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

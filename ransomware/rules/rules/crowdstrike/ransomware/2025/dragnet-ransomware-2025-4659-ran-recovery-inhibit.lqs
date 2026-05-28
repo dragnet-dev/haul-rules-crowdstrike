@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-4659 — Recovery Inhibition (spacebears)
-// Status: test | Level: high | ID: 6693f28a-b7fb-5b8f-b60b-1ab7be4e2a14
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

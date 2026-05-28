@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2020-0056 — Mass File Rename (coldlock)
-// Status: deprecated | Level: high | ID: 10f986ec-c135-54f0-9954-ca76ffccf2c0
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

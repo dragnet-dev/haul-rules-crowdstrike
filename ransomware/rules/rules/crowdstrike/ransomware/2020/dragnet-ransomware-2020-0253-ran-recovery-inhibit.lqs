@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2020-0253 — Recovery Inhibition (revil)
-// Status: deprecated | Level: high | ID: 851def10-718d-5889-a0de-0d45ae0be3f0
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

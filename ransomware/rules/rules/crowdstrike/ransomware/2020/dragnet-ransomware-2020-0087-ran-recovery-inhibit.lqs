@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2020-0087 — Recovery Inhibition (ryuk)
-// Status: deprecated | Level: high | ID: 5e8694d0-0b5e-5fcd-bf10-684afc7b89a2
-
-#event_simpleName=ProcessRollup2
-| (CommandLine = *recoveryenabled no* OR CommandLine = *bootstatuspolicy ignoreallfailures*) AND ImageFileName = *\bcdedit.exe
-| table([timestamp, ComputerName, ImageFileName, CommandLine, ParentImageFileName])
-| limit(1000)

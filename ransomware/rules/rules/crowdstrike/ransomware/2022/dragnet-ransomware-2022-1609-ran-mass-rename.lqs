@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2022-1609 — Mass File Rename (dispossessor)
-// Status: experimental | Level: high | ID: f35de4c4-99c7-5b58-9ac2-b1cbf7f0c5f2
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

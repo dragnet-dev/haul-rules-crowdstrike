@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-4389 — Mass File Rename (metaencryptor)
-// Status: experimental | Level: high | ID: ededfac5-3d60-5703-81ef-a78f9144a225
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2022-0269 — Mass File Rename (cryptbb)
-// Status: experimental | Level: high | ID: 863db016-b818-5274-9307-12a791e54c41
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

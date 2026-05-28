@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-4756 — Mass File Rename (clop)
-// Status: experimental | Level: high | ID: 2aba40a1-7cf7-5973-839c-c1ab0c318abd
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-1233 — Mass File Rename (m3rx)
-// Status: stable | Level: high | ID: 449080d0-9449-5433-9d8c-af7551332a69
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

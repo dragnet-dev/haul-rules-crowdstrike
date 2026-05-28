@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-0006 — Mass File Rename (anubis)
-// Status: stable | Level: high | ID: e90af836-a500-54de-bef3-4ddd510df798
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

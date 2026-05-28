@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-2602 — Mass File Rename (tengu)
-// Status: test | Level: high | ID: f3d7874e-9efe-532f-aee5-f1c526bc5930
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

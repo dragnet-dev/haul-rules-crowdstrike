@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-0268 — Mass File Rename (bert)
-// Status: experimental | Level: high | ID: df5ed2cd-a93a-58db-9b31-f9a2e26ef189
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

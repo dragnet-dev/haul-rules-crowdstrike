@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-4721 — Mass File Rename (crosslock)
-// Status: experimental | Level: high | ID: b4d9861c-19cc-5615-9edd-7b4eddbfce28
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

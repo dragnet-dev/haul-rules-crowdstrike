@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-3425 — Mass File Rename (sinobi)
-// Status: test | Level: high | ID: 7cadffd2-7882-527b-98aa-77c667b71030
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

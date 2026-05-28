@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-3520 — Mass File Rename (blackbasta)
-// Status: experimental | Level: high | ID: 5f1e8293-2018-59aa-9447-6098d737a988
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

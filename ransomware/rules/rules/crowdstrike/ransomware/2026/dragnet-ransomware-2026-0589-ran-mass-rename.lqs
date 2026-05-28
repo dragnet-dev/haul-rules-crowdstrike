@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-0589 — Mass File Rename (nova)
-// Status: test | Level: high | ID: 9743b4e2-a91c-5002-a7df-38db55c9fcce
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

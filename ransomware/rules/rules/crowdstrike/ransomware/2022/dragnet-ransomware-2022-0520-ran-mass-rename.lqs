@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2022-0520 — Mass File Rename (ransomexx)
-// Status: experimental | Level: high | ID: ff3539dd-981a-510b-929b-6a0f563be2de
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

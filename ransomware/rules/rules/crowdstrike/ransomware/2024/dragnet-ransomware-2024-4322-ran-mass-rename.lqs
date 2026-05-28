@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-4322 — Mass File Rename (apt73)
-// Status: experimental | Level: high | ID: fc2cde87-a61d-5e36-8303-2968cc34f807
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

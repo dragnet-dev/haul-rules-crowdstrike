@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-2416 — Mass File Rename (exitium)
-// Status: stable | Level: high | ID: 77ddf237-7e28-5b53-b4ce-d5733be2a92e
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

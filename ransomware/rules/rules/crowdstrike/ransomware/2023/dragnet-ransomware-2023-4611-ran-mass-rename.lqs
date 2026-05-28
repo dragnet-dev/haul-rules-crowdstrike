@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-4611 — Mass File Rename (medusa)
-// Status: experimental | Level: high | ID: b9d88fbd-7303-5542-a7e6-7b7e6b78de38
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

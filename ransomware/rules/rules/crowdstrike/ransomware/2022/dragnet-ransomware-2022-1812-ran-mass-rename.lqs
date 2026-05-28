@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2022-1812 — Mass File Rename (hive)
-// Status: deprecated | Level: high | ID: 4cf298fc-5795-5ba8-a8cb-82fa22be2ff9
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

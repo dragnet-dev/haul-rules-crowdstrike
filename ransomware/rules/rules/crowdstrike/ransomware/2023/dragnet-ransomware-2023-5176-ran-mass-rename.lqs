@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-5176 — Mass File Rename (mallox)
-// Status: experimental | Level: high | ID: 0fca0e6c-bad2-5d2a-8bf7-2ef9e5200cd6
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

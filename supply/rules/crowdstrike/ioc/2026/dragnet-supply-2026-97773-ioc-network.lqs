@@ -1,7 +1,7 @@
 // Dragnet [IOC]: dragnet-supply-2026-97773 — C2 Network Communication
-// Status: stable | Level: medium | ID: 60638311-478f-532f-b2b8-16a08f7ac6e4
+// Status: stable | Level: high | ID: 60638311-478f-532f-b2b8-16a08f7ac6e4
 
 #event_simpleName=NetworkConnectIP4
-| (DomainName = *07d889e2dadce6f3910dcbc253317d28ca61c766Domainsfrclak.comC2* OR DomainName = *domain-Domaincallnrwise.comC2* OR DomainName = *-IP142.11.206.73C2* OR DomainName = *proton.meThreat*)
+| (DomainName = *-IP142.11.206.73C2* OR DomainName = *proton.meThreat* OR DomainName = *07d889e2dadce6f3910dcbc253317d28ca61c766Domainsfrclak.comC2* OR DomainName = *domain-Domaincallnrwise.comC2*)
 | table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
 | limit(1000)

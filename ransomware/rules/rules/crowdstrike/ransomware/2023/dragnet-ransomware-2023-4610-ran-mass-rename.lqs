@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-4610 — Mass File Rename (bianlian)
-// Status: experimental | Level: high | ID: eb59077c-a80c-5fec-9599-7e8295c1926f
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

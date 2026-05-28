@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-1114 — Mass File Rename (helldown)
-// Status: experimental | Level: high | ID: 8ced8084-5c0c-5e01-afb1-580606122ede
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-7883 — Mass File Rename (cicada3301)
-// Status: experimental | Level: high | ID: 862adb9d-3ce9-5e8d-9c71-ec09f64a0ecd
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

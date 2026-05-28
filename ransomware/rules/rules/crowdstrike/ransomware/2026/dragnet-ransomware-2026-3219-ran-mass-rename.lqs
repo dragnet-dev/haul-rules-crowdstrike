@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-3219 — Mass File Rename (lamashtu)
-// Status: stable | Level: high | ID: 1a78a75c-db74-52cc-a436-0e731959b09f
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

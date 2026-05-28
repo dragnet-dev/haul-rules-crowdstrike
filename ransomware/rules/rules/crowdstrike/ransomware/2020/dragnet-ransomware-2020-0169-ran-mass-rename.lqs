@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2020-0169 — Mass File Rename (egregor)
-// Status: deprecated | Level: high | ID: 645925ad-d8df-5eb2-8824-598e3447b869
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-0037 — Mass File Rename (alphalocker)
-// Status: experimental | Level: high | ID: 97108e00-f2bf-5315-b783-ddb09aaf4797
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

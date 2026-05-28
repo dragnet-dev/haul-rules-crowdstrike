@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-1653 — Mass File Rename (nitrogen)
-// Status: test | Level: high | ID: 64d344c1-c208-59f4-a80e-28b7d36c6014
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

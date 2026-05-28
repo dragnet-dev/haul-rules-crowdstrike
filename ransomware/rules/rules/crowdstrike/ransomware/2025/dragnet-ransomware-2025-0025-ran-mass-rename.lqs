@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-0025 — Mass File Rename (interlock)
-// Status: experimental | Level: high | ID: fcf80df0-4a09-5a40-9340-696589a970f0
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

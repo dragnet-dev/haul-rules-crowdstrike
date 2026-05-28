@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-3653 — Mass File Rename (moneymessage)
-// Status: experimental | Level: high | ID: e10c88de-1efc-55d9-855e-c5758eab8368
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

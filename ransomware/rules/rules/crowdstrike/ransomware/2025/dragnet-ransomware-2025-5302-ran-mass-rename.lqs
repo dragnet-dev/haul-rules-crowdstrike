@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-5302 — Mass File Rename (flocker)
-// Status: experimental | Level: high | ID: 25bb6a08-8285-5bd2-b417-f4de2129c6e4
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

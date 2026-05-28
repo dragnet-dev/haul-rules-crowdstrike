@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-1710 — Mass File Rename (ransomhouse)
-// Status: test | Level: high | ID: 368b1958-659e-5284-bf84-30d55f3d3e07
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

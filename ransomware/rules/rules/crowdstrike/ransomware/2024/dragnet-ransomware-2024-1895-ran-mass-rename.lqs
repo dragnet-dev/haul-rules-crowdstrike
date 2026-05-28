@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-1895 — Mass File Rename (raznatovic)
-// Status: experimental | Level: high | ID: 396f4de7-ade2-50f4-8758-322229ed9f6e
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

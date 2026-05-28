@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-3740 — Mass File Rename (cryptbb)
-// Status: experimental | Level: high | ID: 09b30e1a-c87b-5036-873c-f2c514cb326a
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

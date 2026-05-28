@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-0240 — Mass File Rename (ransomhub)
-// Status: experimental | Level: high | ID: ee933948-17e1-578d-8224-4ca5da5f3942
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

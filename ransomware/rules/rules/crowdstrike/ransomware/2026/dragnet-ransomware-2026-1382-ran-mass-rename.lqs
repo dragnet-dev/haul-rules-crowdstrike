@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-1382 — Mass File Rename (krybit)
-// Status: stable | Level: high | ID: b9c3408f-99eb-5350-a7a2-a679aa458acd
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

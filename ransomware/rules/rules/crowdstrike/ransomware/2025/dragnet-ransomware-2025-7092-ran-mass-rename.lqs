@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-7092 — Mass File Rename (hunters)
-// Status: experimental | Level: high | ID: 52a73f0d-0e0d-5d3d-a1f9-3433e8ccb7fd
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

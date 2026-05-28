@@ -1,7 +1,0 @@
-// Dragnet [IOC]: dragnet-supply-2026-234768 — C2 Network Communication
-// Status: test | Level: medium | ID: 4b7b01dd-bbfb-5400-ac44-0644c7c19021
-
-#event_simpleName=NetworkConnectIP4
-| (DomainName = *https://check.git-service.com/rope.pyz* OR DomainName = *https://check.git-service.com/v1/models* OR DomainName = *https://check.git-service.com/api/public/version* OR DomainName = *https://check.git-service.com/audio.mp3* OR DomainName = *https://t.m-kosche.com/rope.pyz*)
-| table([timestamp, ComputerName, RemoteAddressIP4, DomainName, ImageFileName])
-| limit(1000)

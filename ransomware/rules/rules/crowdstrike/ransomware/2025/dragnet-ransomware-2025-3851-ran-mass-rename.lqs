@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-3851 — Mass File Rename (blacksuit)
-// Status: experimental | Level: high | ID: bf42dd82-64be-569b-b58d-0c954e85e1a1
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

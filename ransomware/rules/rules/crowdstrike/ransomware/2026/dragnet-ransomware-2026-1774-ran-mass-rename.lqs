@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2026-1774 — Mass File Rename (medusalocker)
-// Status: stable | Level: high | ID: 87dc9960-ceff-524e-8dc3-8caec7c286ca
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

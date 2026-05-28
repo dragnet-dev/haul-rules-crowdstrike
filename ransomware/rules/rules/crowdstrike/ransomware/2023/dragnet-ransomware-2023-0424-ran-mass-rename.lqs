@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-0424 — Mass File Rename (cuba)
-// Status: experimental | Level: high | ID: fddd7b1b-e149-5bf7-acc9-16b70cabd21a
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-3581 — Mass File Rename (ragnarlocker)
-// Status: experimental | Level: high | ID: cd0112ca-c044-5dbd-b042-251b7ed72334
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

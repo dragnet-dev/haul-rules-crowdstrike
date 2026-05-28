@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-1708 — Mass File Rename (yurei)
-// Status: experimental | Level: high | ID: 97cdd8d2-7426-5ed4-9217-d52c2406098b
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

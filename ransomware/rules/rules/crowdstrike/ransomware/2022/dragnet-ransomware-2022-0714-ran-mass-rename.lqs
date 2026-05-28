@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2022-0714 — Mass File Rename (redalert)
-// Status: deprecated | Level: high | ID: 4d5f4b17-8551-59d7-be57-59da496301ec
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

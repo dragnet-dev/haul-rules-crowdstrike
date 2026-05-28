@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-0352 — Mass File Rename (meow)
-// Status: experimental | Level: high | ID: 25b6f090-fcc4-524b-9411-82c0eef71fcd
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-3668 — Mass File Rename (kraken)
-// Status: experimental | Level: high | ID: 5694c00c-ab3c-5894-b797-8414adeefcf0
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

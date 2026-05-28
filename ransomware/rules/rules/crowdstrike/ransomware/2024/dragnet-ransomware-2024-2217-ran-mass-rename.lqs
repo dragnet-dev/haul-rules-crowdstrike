@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-2217 — Mass File Rename (BrainCipher)
-// Status: experimental | Level: high | ID: 00728b3a-d730-557f-9e79-646ddef32c0f
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2024-4736 — Mass File Rename (alphv)
-// Status: experimental | Level: high | ID: 04c68f84-db76-5fce-a8d4-e2f8c3a65ebd
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

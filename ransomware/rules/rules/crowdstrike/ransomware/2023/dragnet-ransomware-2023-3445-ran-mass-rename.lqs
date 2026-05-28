@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-3445 — Mass File Rename (knight)
-// Status: experimental | Level: high | ID: 247207d0-15c6-5242-abfb-c00e7d8676ea
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

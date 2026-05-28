@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2020-0233 — Mass File Rename (ragnarlocker)
-// Status: experimental | Level: high | ID: a0486b19-05f4-5927-abdc-9e358780e4c7
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

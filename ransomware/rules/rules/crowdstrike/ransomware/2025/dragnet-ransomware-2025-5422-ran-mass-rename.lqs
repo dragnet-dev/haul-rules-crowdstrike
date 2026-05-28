@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-5422 — Mass File Rename (arkana)
-// Status: experimental | Level: high | ID: 60f270d2-1279-5db5-a6cc-7d378b4b78c6
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

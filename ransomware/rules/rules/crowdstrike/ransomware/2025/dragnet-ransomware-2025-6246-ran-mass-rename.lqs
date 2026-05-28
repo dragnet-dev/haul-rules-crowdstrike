@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2025-6246 — Mass File Rename (tridentlocker)
-// Status: experimental | Level: high | ID: 16414680-39c0-507d-9b1e-cbc59339b53d
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)

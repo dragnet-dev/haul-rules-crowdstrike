@@ -1,7 +1,0 @@
-// Dragnet [Ransomware]: dragnet-ransomware-2023-0603 — Mass File Rename (dunghill)
-// Status: experimental | Level: high | ID: 6184aff1-673c-59b8-9d15-8d22097cbc43
-
-#event_simpleName=*
-| (FilePath = *.encrypted OR FilePath = *.locked OR FilePath = *.ransom)
-| table([timestamp, ComputerName])
-| limit(1000)
